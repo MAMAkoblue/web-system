@@ -122,9 +122,15 @@
       console.log('showVideo function called');
       const videoContainer = document.getElementById('videoContainer');
       const videosSection = document.getElementById('videos');
+      const iframe = videoContainer.querySelector('iframe');
       
       console.log('videoContainer:', videoContainer);
       console.log('videosSection:', videosSection);
+      console.log('iframe:', iframe);
+      
+      // Set the iframe src to ensure the video loads
+      iframe.src = 'https://www.youtube.com/embed/EtW2rrLHs08';
+      console.log('Iframe src set to:', iframe.src);
       
       // Show the video with fade-in effect
       videoContainer.style.display = 'block';
@@ -151,6 +157,8 @@
       const videoContainer = document.getElementById('videoContainer');
       
       playVideoBtn.addEventListener('click', function() {
+        const iframe = videoContainer.querySelector('iframe');
+        iframe.src = 'https://www.youtube.com/embed/EtW2rrLHs08';
         videoContainer.style.display = 'block';
         videoContainer.style.opacity = '0';
         playVideoBtn.style.display = 'none';
